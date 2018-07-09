@@ -1,11 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {remove, like, dislike} from './commentActions'
+import {remove, like, dislike, repost} from './commentActions'
 import likeImage from '../common/img/like.png'
 import heartImage from '../common/img/heart.png'
 import heartBrokenImage from '../common/img/dislike-empty.png'
 import dislikeImage from '../common/img/dislike.png'
+import repostImage from '../common/img/repost.png'
  
 const CommentList = props => {
     const comments = props.comments || []
@@ -31,6 +32,9 @@ const CommentList = props => {
                     <div className='col s1 like-btn'>
                         <a onClick={() => props.dislike(comment.id)} className='like-btn'><img src={!comment.disliked ? heartBrokenImage: dislikeImage}  alt="Curtir" />({!comment.disliked ? '0' : '1'})</a>
                     </div>
+                    <div className='col s1 like-btn'>
+                        <a onClick={() => props.repost(comment.post, comment.user)} className='like-btn'><img src={repostImage}  alt="Publicar novamente" /></a>
+                    </div>
                 </div>
             </ul>
         ))}
@@ -39,5 +43,5 @@ const CommentList = props => {
 }
 
 const mapStateToProps = state => ({comments: state.comments})
-const mapDispatchToProps = dispatch => bindActionCreators({remove, like, dislike}, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({remove, like, dislike, repost}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(CommentList)

@@ -4,3 +4,4 @@ export const post = (text, user) => { return { type: 'POST_ADDED', text, user, i
 export const remove = (id) => { return { type: 'POST_DELETED', id } }
 export const like = (id) => { return { type: 'POST_LIKED', id } }
 export const dislike = (id) => { return { type: 'POST_DISLIKED', id } }
+export const repost = (text, user) => { return [{ type: 'RE-POST' }, post(text, user)] }
