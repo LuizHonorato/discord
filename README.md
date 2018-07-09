@@ -21,9 +21,6 @@ No diretória de sua escolha siga os seguintes passos:
 
 # Screenshots
 
-1)
 <p><img src="images/print-discord-1.PNG" /></p>
-2)
 <p><img src="images/print-discord-2.PNG" /></p>
-3)
 <p><img src="images/print-discord-3.PNG" /></p>
